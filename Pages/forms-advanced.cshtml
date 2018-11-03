@@ -1,0 +1,276 @@
+﻿@page
+@{
+    ViewData["Title"] = "Advanced Form Elements";
+}
+<div class="container-fluid">
+    <div class="section-heading">
+        <h1 class="page-title">Advanced Form Elements</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Masked Text Inputs</h2>
+                <div class="form-group">
+                    <label for="phone" class="control-label">Phone</label>
+                    <input type="text" id="phone" class="form-control">
+                    <span class="help-block">(999) 999-9999</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone-ex" class="control-label">Phone + Ext</label>
+                    <input type="text" id="phone-ex" class="form-control">
+                    <span class="help-block">(999) 999-9999? x99999</span>
+                </div>
+                <div class="form-group">
+                    <label for="tax-id" class="control-label">Tax ID</label>
+                    <input type="text" id="tax-id" class="form-control">
+                    <span class="help-block">99-9999999</span>
+                </div>
+                <div class="form-group">
+                    <label for="ssn" class="control-label">SSN</label>
+                    <input type="text" id="ssn" class="form-control">
+                    <span class="help-block">999-99-9999</span>
+                </div>
+                <div class="form-group">
+                    <label for="product-key" class="control-label">Product Key</label>
+                    <input type="text" id="product-key" class="form-control">
+                    <span class="help-block">a*-999-a999</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Multiselect</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Default</label>
+                        <br>
+                        <select id="multiselect1" name="multiselect1[]" class="multiselect" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>"Select All" Option Enabled</label>
+                        <br>
+                        <select id="multiselect3-all" name="multiselect3[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="multiselect-all">Select All</option>
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Options Group</label>
+                        <br>
+                        <select id="multiselect5" name="multiselect5" class="multiselect-custom" multiple="multiple">
+                            <optgroup label="Mathematics">
+                                <option value="analysis">Analysis</option>
+                                <option value="algebra">Linear Algebra</option>
+                                <option value="discrete">Discrete Mathematics</option>
+                                <option value="numerical">Numerical Analysis</option>
+                                <option value="probability">Probability Theory</option>
+                            </optgroup>
+                            <optgroup label="Computer Science">
+                                <option value="programming">Introduction to Programming</option>
+                                <option value="automata">Automata Theory</option>
+                                <option value="complexity">Complexity Theory</option>
+                                <option value="software">Software Engineering</option>
+                            </optgroup>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Smaller Size</label>
+                        <br>
+                        <select id="multiselect-size" name="multiselect7[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Custom Button Class (btn-primary)</label>
+                        <br>
+                        <select id="multiselect-color" name="multiselect9[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Custom Checkbox</label>
+                        <br>
+                        <select id="multiselect2" name="multiselect2[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Single Selection</label>
+                        <br>
+                        <select id="single-selection" name="single_selection" class="multiselect multiselect-custom">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Filter Enabled</label>
+                        <br>
+                        <select id="multiselect4-filter" name="multiselect4[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="bootstrap">Bootstrap</option>
+                            <option value="bootstrap-marketplace">Bootstrap Marketplace</option>
+                            <option value="bootstrap-theme">Bootstrap Theme</option>
+                            <option value="html">HTML</option>
+                            <option value="html-template">HTML Template</option>
+                            <option value="wp-marketplace">WordPress Marketplace</option>
+                            <option value="wp-plugin">WordPress Plugin</option>
+                            <option value="wp-theme">WordPress Theme</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Disabled Options</label>
+                        <br>
+                        <select id="multiselect6" name="multiselect6[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms" disabled="disabled">Mushrooms</option>
+                            <option value="pepperoni" disabled="disabled">Pepperoni</option>
+                            <option value="onions" disabled="disabled">Onions</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Link (btn-link)</label>
+                        <br>
+                        <select id="multiselect-link" name="multiselect8[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                        </select>
+                        <br>
+                        <br>
+                        <label>Custom Button Class (btn-success)</label>
+                        <br>
+                        <select id="multiselect-color2" name="multiselect10[]" class="multiselect multiselect-custom" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Date Picker</h2>
+                <label>Default</label>
+                <br>
+                <input data-provide="datepicker" data-date-autoclose="true" class="form-control">
+                <br>
+                <br>
+                <label>Custom Format (dd/mm/yyyy)</label>
+                <br>
+                <input data-provide="datepicker" data-date-autoclose="true" class="form-control" data-date-format="dd/mm/yyyy">
+                <br>
+                <br>
+                <label>With Component</label>
+                <br>
+                <div class="input-group date" data-date-autoclose="true" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                </div>
+                <br>
+                <br>
+                <label>Range</label>
+                <br>
+                <div class="input-daterange input-group" data-provide="datepicker">
+                    <input type="text" class="input-sm form-control" name="start">
+                    <span class="input-group-addon">to</span>
+                    <input type="text" class="input-sm form-control" name="end">
+                </div>
+                <br>
+                <br>
+                <label>Inline</label>
+                <br>
+                <div class="inline-datepicker"></div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+<!-- Javascript -->
+@section Scripts {
+
+    <script src="~/lib/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+    <script src="~/lib/jquery.maskedinput/jquery.maskedinput.min.js"></script>
+    <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        $(function () {
+
+            // Masked Inputs
+            $('#phone').mask('(999) 999-9999');
+            $('#phone-ex').mask('(999) 999-9999? x99999');
+            $('#tax-id').mask('99-9999999');
+            $('#ssn').mask('999-99-9999');
+            $('#product-key').mask('a*-999-a999');
+
+
+            // Multiselect
+            $('#multiselect1, #multiselect2, #single-selection, #multiselect5, #multiselect6').multiselect({
+                maxHeight: 300
+            });
+
+            $('#multiselect3-all').multiselect({
+                includeSelectAllOption: true,
+            });
+
+            $('#multiselect4-filter').multiselect({
+                enableFiltering: true,
+                enableCaseInsensitiveFiltering: true,
+                maxHeight: 200
+            });
+
+            $('#multiselect-size').multiselect({
+                buttonClass: 'btn btn-default btn-sm'
+            });
+
+            $('#multiselect-link').multiselect({
+                buttonClass: 'btn btn-link'
+            });
+
+            $('#multiselect-color').multiselect({
+                buttonClass: 'btn btn-primary'
+            });
+
+            $('#multiselect-color2').multiselect({
+                buttonClass: 'btn btn-success'
+            });
+
+
+            // Date picker
+            $('.inline-datepicker').datepicker({
+                todayHighlight: true
+            });
+
+        });
+    </script>
+}

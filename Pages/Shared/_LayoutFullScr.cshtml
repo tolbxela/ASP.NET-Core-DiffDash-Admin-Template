@@ -1,0 +1,42 @@
+﻿<!doctype html>
+<html lang="en" class="fullscreen-bg">
+<head>
+    <title>@ViewData["Title"] | DiffDash - Free Admin Template</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <environment include="Development">
+        <!-- VENDOR CSS -->
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css">
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="~/lib/diffdash/css/main.css">
+        <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+        <link rel="stylesheet" href="~/lib/diffdash/css/demo.css">
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <!-- VENDOR CSS -->
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css">
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" href="~/lib/diffdash/css/main.css">
+        <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+        <link rel="stylesheet" href="~/lib/diffdash/css/demo.css">
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+    @RenderSection("Headers", required: false)
+
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="~/lib/diffdash/img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/lib/diffdash/img/favicon.png">
+
+</head>
+
+@RenderBody()
+
+</html>

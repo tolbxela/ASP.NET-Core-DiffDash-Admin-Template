@@ -1,0 +1,123 @@
+﻿@{
+    var Active = "active";
+
+    var DashboardActive = "";
+    var ElementsActive = "";
+    var ChartsActive = "";
+    var FormsActive = "";
+    var NotificationsActive = "";
+    var PagesActive = "";
+    var TablesActive = "";
+    var TypographyActive = "";
+
+    switch (ViewData["Title"])
+    {
+
+        case "Dashboard":
+            DashboardActive = Active;
+            break;
+        case "UI Elements":
+        case "Tabs":
+        case "Buttons":
+        case "Bootstrap UI":
+        case "Icons":
+            ElementsActive = Active;
+            break;
+        case "Chartist":
+        case "Sparkline Charts":
+            ChartsActive = Active;
+            break;
+        case "Form Validation":
+        case "Advanced Form Elements":
+        case "Basic Form Elements":
+        case "Drag &amp; Drop File Upload":
+        case "Text Editor":
+            FormsActive = Active;
+            break;
+        case "Notifications":
+            NotificationsActive = Active;
+            break;
+        case "Pages":
+        case "User Profile":
+            PagesActive = Active;
+            break;
+        case "Tables":
+            TablesActive = Active;
+            break;
+        case "Typography":
+            TypographyActive = Active;
+            break;
+    }
+}
+
+<div id="left-sidebar" class="sidebar">
+    <button type="button" class="btn btn-xs btn-link btn-toggle-fullwidth">
+        <span class="sr-only">Toggle Fullwidth</span>
+        <i class="fa fa-angle-left"></i>
+    </button>
+    <div class="sidebar-scroll">
+        <div class="user-account">
+            <img src="~/lib/diffdash/img/user.png" class="img-responsive img-circle user-photo" alt="User Profile Picture">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle user-name" data-toggle="dropdown">Hello, <strong>Austin Hoffman</strong> <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right account">
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav id="left-sidebar-nav" class="sidebar-nav">
+            <ul id="main-menu" class="metismenu">
+                <li class="@DashboardActive"><a href="index"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+                <li class="@ElementsActive">
+                    <a href="#uiElements" class="has-arrow" aria-expanded="false"><i class="lnr lnr-magic-wand"></i> <span>UI Elements</span></a>
+                    <ul aria-expanded="true">
+                        <li class=""><a href="ui-tabs">Tabs</a></li>
+                        <li class=""><a href="ui-buttons">Buttons</a></li>
+                        <li class=""><a href="ui-bootstrap">Bootstrap UI</a></li>
+                        <li class=""><a href="ui-icons"><span>Icons</span></a></li>
+                    </ul>
+                </li>
+                <li class="@PagesActive">
+                    <a href="#subPages" class="has-arrow" aria-expanded="false"><i class="lnr lnr-file-empty"></i> <span>Pages</span></a>
+                    <ul aria-expanded="true">
+                        <li class=""><a href="page-profile">User Profile</a></li>
+                        <li class=""><a href="page-login">Login</a></li>
+                        <li class=""><a href="page-register">Register</a></li>
+                        <li class=""><a href="page-lockscreen">Lockscreen</a></li>
+                        <li class=""><a href="page-forgot-password">Forgot Password</a></li>
+                        <li class=""><a href="page-404">Page 404</a></li>
+                        <li class=""><a href="page-500">Page 500</a></li>
+                    </ul>
+                </li>
+                <li class="@FormsActive">
+                    <a href="#forms" class="has-arrow" aria-expanded="false"><i class="lnr lnr-pencil"></i> <span>Forms</span></a>
+                    <ul aria-expanded="true">
+                        <li class=""><a href="forms-validation">Form Validation</a></li>
+                        <li class=""><a href="forms-advanced">Advanced Form Elements</a></li>
+                        <li class=""><a href="forms-basic">Basic Form Elements</a></li>
+                        <li class=""><a href="forms-dragdropupload">Drag &amp; Drop Upload</a></li>
+                        <li class=""><a href="forms-texteditor">Text Editor</a></li>
+                    </ul>
+                </li>
+                <li class="@ChartsActive">
+                    <a href="#charts" class="has-arrow" aria-expanded="false"><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a>
+                    <ul aria-expanded="true">
+                        <li class=""><a href="charts-chartist">Chartist</a></li>
+                        <li class=""><a href="charts-sparkline">Sparkline Chart</a></li>
+                    </ul>
+                </li>
+                <li class="@NotificationsActive"><a href="notifications"><i class="lnr lnr-alarm"></i> <span>Notifications</span> <span class="badge bg-danger">15</span></a></li>
+                <li class="@TypographyActive"><a href="typography"><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
+            </ul>
+        </nav>
+        <div style="padding: 30px; text-align: center;">
+            <h2 style="font-size: 16px; margin-bottom: 15px; font-weight: 700;">Other Similar Template</h2>
+            <a href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=diffdash&utm_medium=template&utm_campaign=KlorofilPro" target="_blank"><img src="~/lib/diffdash/img/klorofilpro.png" class="img-responsive thumbnail" alt=""></a>
+            <a href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=diffdash&utm_medium=template&utm_campaign=KlorofilPro" target="_blank" class="btn btn-primary">VIEW DEMO</a>
+        </div>
+    </div>
+</div>

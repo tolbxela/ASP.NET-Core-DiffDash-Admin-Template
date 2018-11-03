@@ -1,0 +1,121 @@
+﻿@page
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<div class="container-fluid">
+    <div class="section-heading">
+        <h1 class="page-title">Notifications</h1>
+    </div>
+    <div class="panel-content">
+        <strong>Message Context</strong>
+        <br>
+        <br>
+        <p class="demo-button">
+            <button type="button" class="btn btn-primary btn-toastr" data-context="info" data-message="This is general theme info" data-position="bottom-right">General Info</button>
+            <button type="button" class="btn btn-success btn-toastr" data-context="success" data-message="This is success info" data-position="bottom-right">Success Info</button>
+            <button type="button" class="btn btn-warning btn-toastr" data-context="warning" data-message="This is warning info" data-position="bottom-right">Warning Info</button>
+            <button type="button" class="btn btn-danger btn-toastr" data-context="error" data-message="This is error info" data-position="bottom-right">Error Info</button>
+        </p>
+        <div class="margin-bottom-30"></div>
+        <strong>Popup Positions</strong>
+        <br>
+        <br>
+        <p class="demo-button">
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="bottom-right">Bottom Right</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="bottom-left">Bottom Left</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="top-left">Top Left</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="top-right">Top Right</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="top-full-width">Top Full Width</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="bottom-full-width">Bottom Full Width</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="top-center">Top Center</button>
+            <button type="button" class="btn btn-default btn-toastr" data-context="info" data-message="Hi, I'm here" data-position="bottom-center">Bottom Center</button>
+        </p>
+        <div class="margin-bottom-30"></div>
+        <strong>Callback Events</strong>
+        <br>
+        <br>
+        <p class="demo-button">
+            <button type="button" class="btn btn-default btn-toastr-callback" id="toastr-callback1" data-context="info" data-message="onShown and onHidden callback demo">onShown and onHidden</button>
+            <button type="button" class="btn btn-default btn-toastr-callback" id="toastr-callback2" data-context="info" data-message="Please click me">onclick</button>
+            <button type="button" class="btn btn-default btn-toastr-callback" id="toastr-callback3" data-context="info" data-message="Please click close button">onCloseClick</button>
+        </p>
+    </div>
+</div>
+
+<!-- Javascript -->
+@section Scripts{
+    <script>
+        $(function () {
+            toastr.options.timeOut = "false";
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-bottom-right';
+            toastr['info']('Hi there, this is notification demo with HTML support. So, you can add HTML elements like <a href="#">this link</a>');
+
+            $('.btn-toastr').on('click', function () {
+                $context = $(this).data('context');
+                $message = $(this).data('message');
+                $position = $(this).data('position');
+
+                if ($context === '') {
+                    $context = 'info';
+                }
+
+                if ($position === '') {
+                    $positionClass = 'toast-bottom-right';
+                } else {
+                    $positionClass = 'toast-' + $position;
+                }
+
+                toastr.remove();
+                toastr[$context]($message, '', {
+                    positionClass: $positionClass
+                });
+            });
+
+            $('#toastr-callback1').on('click', function () {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "300",
+                    "onShown": function () {
+                        alert('onShown callback');
+                    },
+                    "onHidden": function () {
+                        alert('onHidden callback');
+                    }
+                };
+
+                toastr['info']($message);
+            });
+
+            $('#toastr-callback2').on('click', function () {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "10000",
+                    "onclick": function () {
+                        alert('onclick callback');
+                    },
+                };
+
+                toastr['info']($message);
+
+            });
+
+            $('#toastr-callback3').on('click', function () {
+                $message = $(this).data('message');
+
+                toastr.options = {
+                    "timeOut": "10000",
+                    "closeButton": true,
+                    "onCloseClick": function () {
+                        alert('onCloseClick callback');
+                    }
+                };
+
+                toastr['info']($message);
+            });
+        });
+    </script>
+}

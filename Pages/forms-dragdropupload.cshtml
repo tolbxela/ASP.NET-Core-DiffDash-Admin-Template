@@ -1,0 +1,84 @@
+﻿@page
+@{
+    ViewData["Title"] = "Drag &amp; Drop File Upload";
+}
+@section Headers {
+    <link rel="stylesheet" href="~/lib/dropify/css/dropify.css">
+}
+<div class="container-fluid">
+    <div class="section-heading">
+        <h1 class="page-title">Drag &amp; Drop File Upload</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Default</h2>
+                <input type="file" class="dropify">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Limit file size, try to upload file larger than 100 KB</h2>
+                <input type="file" class="dropify" data-max-file-size="100K">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Limit file type, try to upload png or pdf only</h2>
+                <input type="file" class="dropify" data-allowed-file-extensions="pdf png">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> With event and default file, try to remove the image</h2>
+                <input type="file" id="dropify-event" data-default-file="/lib/diffdash/img/uploaded-file.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Disabled file upload</h2>
+                <input type="file" class="dropify" disabled="disabled">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel-content">
+                <h2 class="heading"><i class="fa fa-square"></i> Custom messages for default, replace, remove and error</h2>
+                <input type="file" class="dropify-fr">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Javascript -->
+@section Scripts {
+
+    <script src="~/lib/dropify/js/dropify.min.js"></script>
+
+    <script>
+        $(function () {
+            $('.dropify').dropify();
+
+            var drEvent = $('#dropify-event').dropify();
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove: 'Supprimer',
+                    error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+        });
+    </script>
+}
